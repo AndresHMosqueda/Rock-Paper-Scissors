@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,29 @@
     <title>Rock, paper, scissors</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-    <section class="game-zone">
-        <img src="images/images/paper.png" alt="El Ju">
-        <img src="images/images/rock.png" alt="El Ju">
+    <section id="game-zone">
+
+        <figure>
+
+            <figcaption>Jugador</figcaption>
+
+            <img id="playerChoice" src="images/images/rock.png" alt="Elección del jugador">
+
+        </figure>
+
+
+
+        <figure>
+
+            <figcaption>Computadora</figcaption>
+
+            <img id="computerChoice" src="images/images/rock.png" alt="Elección del computador">
+
+        </figure>
+
     </section>
 
     <p id="result">
@@ -25,16 +44,17 @@
 
     <section>
         <button>
-                <img src="images/images/paper.png" alt="El Ju">
+            <img src="images/images/paper.png" alt="El Ju">
         </button>
         <button>
-                <img src="images/images/rock.png" alt="El Ju">
+            <img src="images/images/rock.png" alt="El Ju">
         </button>
         <button>
-                <img src="images/images/scissors.png" alt="El Ju">
+            <img src="images/images/scissors.png" alt="El Ju">
         </button>
     </section>
-    
+
     <script src="app.js"></script>
 </body>
+
 </html>
