@@ -7,6 +7,15 @@ const pScore = document.getElementById('score');
 
 const buttons = document.querySelectorAll('button');
 const choices = ['piedra', 'papel', 'tijeras']
+const fileNames = {
+    'piedra' : 'images/images/rock.png',
+    'papel' : 'images/images/paper.png',
+    'tijeras' : 'images/images/scissors.png',
+}
+
+let positiveScore = 0;
+let negativeScore = 0;
+
 
 buttons.forEach(button => {
     button.addEventListener('click', startGame)
@@ -25,14 +34,39 @@ function startGame(event) {
 
     console.log(`El ganador es: ${winner}`);
 
+    // mostar resultados
+    imgPlayerChoice.setAttribute('src', fileNames[playerChoice] )
+    imgComputerChoice.setAttribute('src',fileNames[computerChoice] )
+
+    let result = ''; 
+
+    switch (true) {
+        case (winner === 'player'):
+             result = 'ganas'
+             ++positiveScore
+            break;
+        case (winner === 'computer'):
+             result = 'pierdes'
+             ++negativeScore
+            break;
+        case (winner === 'Draw'):
+             result = 'empatas'
+            break;
+        default:
+            result = 'empatas'
+            break;
+    }
+
+    pResult.innerHTML = `Tu ${result} escogiendo <strong>${playerChoice}</strong>
+    en contra de <strong>${computerChoice}</strong>`
+
+  
+    pScore.innerHTML = `Has ganado <strong>${positiveScore}</strong> veces
+    Has perdido <strong>${negativeScore}</strong> veces`
 
 
-    //mostar resultados
-    // if(playerWins) {
 
-    // } else {
 
-    // }
 };
 
 function getComputerChoice() {
@@ -45,7 +79,6 @@ function getComputerChoice() {
 }
 
 function getWinner(playerChoice, computerChoice) {
-
 
     switch (true) {
         case (playerChoice === 'piedra' && computerChoice === 'piedra'):
