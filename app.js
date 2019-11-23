@@ -94,9 +94,6 @@ function getWinner(playerChoice, computerChoice) {
         case (playerChoice === 'piedra' && computerChoice === 'papel'):
             return 'computer';
             break;
-        case (playerChoice === 'piedra' && computerChoice === 'tijeras'):
-            return 'computer';
-            break;
         case (playerChoice === 'papel' && computerChoice === 'tijeras'):
             return 'computer';
             break;
@@ -113,9 +110,7 @@ function getWinner(playerChoice, computerChoice) {
         case (playerChoice === 'tijeras' && computerChoice === 'papel'):
             return 'player';
             break;
-        case (playerChoice === 'piedra' && computerChoice === 'tijeras'):
-            return 'player';
-            break;
+
 
         default:
             console.log('default');
